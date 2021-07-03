@@ -23,7 +23,8 @@ If an images has those mean and std, that mean that the images is empty.
 Raw images have a resolution of 5 000 by 5 000 pixels making them to big to be usefull for a D&D maps usage. So a script was made to:
 - Load images from `in_folder` (`raw_data` by default)
 - Crop the images to an `image_size` dimension (px)
-- Detect border/empty crop by detecting the edges on the images (cv2.Canny), dilate the edges (cv2.dilate) with a kernel of 5 by 5 and erode the image. This allow to to fill area with lot of features and remove area with low features. 
+- Detect border/empty crop by detecting the edges on the images (cv2.Canny), dilate the edges (cv2.dilate) with a kernel of 5 by 5 and erode the image. This allow to to fill area with lot of features and remove area with low features. ![image_detection](https://raw.githubusercontent.com/hy-son/Old_maps_generator/master/images/Datapreprocessing_demo.png) 
+- This preprocessing code can be configured using the images_size, in and out folder:
 ```bash 
 python3 data_proprocessing.py --image_size 500 --in_folder "raw_data/0" --out_folder "data/1" 
 ```
